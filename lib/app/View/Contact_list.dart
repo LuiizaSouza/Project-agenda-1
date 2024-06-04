@@ -23,7 +23,16 @@ final lista = [
         ],
       
       ) ,
-      body:ListView()
+      body:ListView.builder(
+         itemCount: lista.length,
+         itemBuilder: (context, i){
+          dynamic contato = lista[i];
+          return ListTile(
+            title: Text(contato['nome']),
+            subtitle: Text(contato['telefone']),
+          );
+        },
+      )
     );
   }
 }
